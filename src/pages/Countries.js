@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 class Countries extends Component {
   
-
+  passToParent = (country) => {
+    this.props.callback(country)
+  }
  
   render() {
 
@@ -21,7 +23,7 @@ class Countries extends Component {
                 <p>
                 {country.flag}
                 </p>
-                <p><Link to={`/${country.cca3}`}>
+                <p><Link onClick={()=> {this.PassToParent(country.cca3)}} to={`/${country.cca3}`}>
                 {country.name.common}
                 </Link></p>
               </div>
